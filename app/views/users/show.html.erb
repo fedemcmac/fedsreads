@@ -1,0 +1,10 @@
+<h3><%= @user.username + " is our user n." + @user.id.to_s %></h3><br>
+
+<h4>These are their reviewed books: </h4><br>
+
+<% @user.books.map do |book| %>
+    <%= book.title %><br>
+
+<% end %>
+
+<%= link_to "Delete your account", user_path(@user),method: :delete, data: { confirm: 'Are you sure?' } %>
